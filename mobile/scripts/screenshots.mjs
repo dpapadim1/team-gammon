@@ -14,7 +14,7 @@ const SLOTS = [
   { dir: 'iphone-6.9in-1290x2796', width: 430, height: 932 },
   { dir: 'iphone-6.3in-1179x2556', width: 393, height: 852 },
 ];
-fs.rmSync(ROOT, { recursive: true, force: true });
+for (const { dir } of SLOTS) fs.rmSync(path.join(ROOT, dir), { recursive: true, force: true });
 
 build();
 const server = await serve(0);
