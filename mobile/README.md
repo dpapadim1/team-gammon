@@ -52,6 +52,8 @@ Building the actual iOS binary needs Xcode 26 on a Mac. Without a Mac, the GitHu
    - Age rating questionnaire: answer "yes" to unrestricted user-generated content (chat) if asked.
    - Review notes: offline play needs no account; online play can be tried with "Play as guest".
 
+The workflow archives without code signing, then automatically signs for App Store Connect during export using the API key. No registered device or development provisioning profile is needed for this TestFlight build.
+
 For a new version, raise `MARKETING_VERSION` in `ios/App/App.xcodeproj/project.pbxproj` (both Debug and Release), then run the workflow again.
 
 ## Things to know before submitting
