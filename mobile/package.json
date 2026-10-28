@@ -1,0 +1,24 @@
+{
+  "name": "team-gammon-mobile",
+  "version": "1.0.0",
+  "description": "Team Gammon iOS app (Capacitor): offline bots, puzzles and tutorial bundled, online play through team-gammon.com",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "node scripts/build-www.mjs",
+    "sync": "node scripts/build-www.mjs && cap sync ios",
+    "serve": "node scripts/build-www.mjs && node scripts/serve.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "assets": "capacitor-assets generate --ios --iconBackgroundColor #12161d --splashBackgroundColor #12161d --iconBackgroundColorDark #12161d --splashBackgroundColorDark #12161d",
+    "open": "cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/ios": "^8.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.6.0"
+  }
+}

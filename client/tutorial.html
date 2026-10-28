@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Gammon &ndash; tutorial</title>
+  <meta name="description" content="Learn Team Gammon in five short lessons on a real board.">
+  <meta name="theme-color" content="#12161d">
+  <link rel="icon" href="/client/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/client/css/app.css">
+</head>
+<body class="doc">
+  <header id="top"><a class="brand" href="/"><span class="logo" aria-hidden="true">&#9679;&#9679;</span>Team Gammon</a><nav><a href="/rules">Rules</a><a href="/">Play</a></nav></header>
+  <main class="rules tutorial">
+    <p id="progress" class="muted"></p>
+    <h1 id="title"></h1>
+    <div id="text"></div>
+    <div id="dice" class="dice-row"></div>
+    <div id="board" class="demo"></div>
+    <p id="feedback" class="feedback" role="status"></p>
+    <div class="row">
+      <button type="button" id="back" class="btn">Back</button>
+      <button type="button" id="undo" class="btn">Undo</button>
+      <button type="button" id="retry" class="btn">Try again</button>
+      <button type="button" id="next" class="btn primary">Next lesson</button>
+    </div>
+    <p id="finish" class="row" hidden><a class="btn primary" href="/">Play against bots</a><a class="btn" href="/puzzles">Solve puzzles</a><a class="btn" href="/rules">Read the rules</a></p>
+  </main>
+  <footer class="site-links"><a href="/rules">Rules</a><a href="/tutorial">Tutorial</a><a href="/puzzles">Puzzles</a><a href="/leaderboard">Leaderboard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cookies">Cookies</a></footer>
+  <script type="module" src="/client/js/tutorialPage.js"></script>
+</body>
+</html>

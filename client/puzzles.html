@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Gammon &ndash; puzzles</title>
+  <meta name="description" content="Find the best play in real Team Gammon positions, one puzzle at a time, with a puzzle rating of its own. Every answer was checked by letting the neural-network bot play the candidates out hundreds of times.">
+  <meta name="theme-color" content="#12161d">
+  <link rel="icon" href="/client/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/client/css/app.css">
+</head>
+<body class="doc">
+  <header id="top"><a class="brand" href="/"><span class="logo" aria-hidden="true">&#9679;&#9679;</span>Team Gammon</a><nav><a href="/rules">Rules</a><a href="/tutorial">Tutorial</a><a href="/">Play</a></nav></header>
+  <main class="rules puzzles">
+    <section id="list-view">
+      <h1>Puzzles</h1>
+      <p class="lead">Real positions from games between bots, one at a time. Each has one best play for the roll, and every answer was checked by letting the neural-network bot behind levels 8 and 9 play the candidate plays out hundreds of times, so the win rates you see afterwards are measured, not guessed.</p>
+      <div class="card rating-card">
+        <p class="rating-line"><span class="rating-big" id="rating"></span><span class="muted">puzzle rating<span id="provisional"> (provisional)</span></span></p>
+        <p class="muted small">Separate from your game rating. Each puzzle moves it once, on your first attempt: finding the best play raises it, a miss lowers it, and the next puzzle is chosen to match it.</p>
+        <div class="row"><button type="button" id="start" class="btn primary"></button><span id="progress" class="muted"></span></div>
+      </div>
+      <div id="history">
+        <h2>Your puzzles</h2>
+        <ol id="grid" class="puzzle-grid"></ol>
+      </div>
+      <p id="waiting" class="muted"></p>
+      <p id="problem" class="error" role="alert"></p>
+      <p class="hint">Your progress and rating are kept in this browser only. New to the game? Start with the <a href="/tutorial">tutorial</a>.</p>
+    </section>
+    <section id="play-view" hidden>
+      <p class="row"><button type="button" id="all" class="btn small">&larr; My puzzles</button><span id="meta" class="muted"></span></p>
+      <div class="puzzle-layout">
+        <div class="puzzle-head">
+          <h1 id="title"></h1>
+          <p id="prompt" class="lead"></p>
+          <div id="dice" class="dice-row"></div>
+        </div>
+        <div id="board" class="demo"></div>
+        <div class="puzzle-panel">
+          <p id="pips" class="muted small"></p>
+          <div id="result" role="status" hidden></div>
+          <div class="row">
+            <button type="button" id="hint" class="btn">Hint</button>
+            <button type="button" id="undo" class="btn">Undo</button>
+            <button type="button" id="retry" class="btn">Try again</button>
+            <button type="button" id="show" class="btn">Show the best play</button>
+            <button type="button" id="next" class="btn primary">Next puzzle</button>
+          </div>
+          <p id="note" class="hint">Counts for your rating once: a hint halves the credit, and showing the best play counts as a miss.</p>
+          <p id="hint-text" class="hint-text" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-links"><a href="/rules">Rules</a><a href="/tutorial">Tutorial</a><a href="/puzzles">Puzzles</a><a href="/leaderboard">Leaderboard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cookies">Cookies</a></footer>
+  <script type="module" src="/client/js/puzzlesPage.js"></script>
+</body>
+</html>

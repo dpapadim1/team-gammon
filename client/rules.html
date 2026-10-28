@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Gammon &ndash; rules</title>
+  <meta name="description" content="How to play Team Gammon: four players, two teams, thirty-two checkers.">
+  <meta name="theme-color" content="#12161d">
+  <link rel="icon" href="/client/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/client/css/app.css">
+</head>
+<body class="doc">
+  <header id="top"><a class="brand" href="/"><span class="logo" aria-hidden="true">&#9679;&#9679;</span>Team Gammon</a><nav><a href="/">Play</a></nav></header>
+  <main class="rules">
+    <h1>How to play Team Gammon</h1>
+    <p class="lead">Team Gammon is backgammon for four. Two teams of two share one board with thirty-two checkers. Every player runs eight checkers from a corner to the home board on the same side, and the first team to bring all sixteen of its checkers home wins.</p>
+
+    <section>
+      <h2>The board and the four seats</h2>
+      <p>The board has 24 points and two dice, as in backgammon. Each seat has its own colour, a numeral on its checkers, and its own starting point:</p>
+      <ul>
+        <li><strong>Top team:</strong> Silver 1 starts on point 24 and Bronze 2 on point 18. They move down towards point 1 and bear off from points 1&ndash;6.</li>
+        <li><strong>Bottom team:</strong> Pearl 1 starts on point 1 and Gold 2 on point 7. They move up towards point 24 and bear off from points 19&ndash;24.</li>
+      </ul>
+      <p>Your own screen always shows your home board at the bottom right, so the Bottom team sees the board flipped. Point numbers stay the same for everybody.</p>
+      <div id="demo-start" class="demo"></div>
+    </section>
+
+    <section>
+      <h2>Turns</h2>
+      <p>The four players take turns in a fixed circle that alternates between the teams: one seat of the Top team, one of the Bottom team, the other Top seat, the other Bottom seat. Which way round the circle goes and who starts is drawn at random when the game begins, so neither team has a built-in edge.</p>
+      <p>On your turn the server rolls two dice. Move your own checkers by the numbers shown, one die per checker move. A double gives four moves. You must play as many dice as you can, and if only one die can be played it has to be the larger one. If you cannot move at all your turn is passed.</p>
+    </section>
+
+    <section>
+      <h2>Landing on a point</h2>
+      <ul>
+        <li>An empty point, or a point with only checkers of your team, is always fine. Teammates share points.</li>
+        <li>Two or more enemy checkers block the point.</li>
+        <li>A <strong>single</strong> enemy checker is pinned, as in the Greek game Plakoto: your checker lands on top of it, and the pinned checker stays on the point, shown at the bottom with a red ring.</li>
+        <li>A pinned checker cannot move until the pinning checkers have left. While the point is pinned, the pinned team cannot land on it, but the pinning team still can.</li>
+        <li><strong>Start sanctuary:</strong> a lone checker standing on its own seat&rsquo;s starting point can never be pinned.</li>
+      </ul>
+      <div id="demo-pin" class="demo"></div>
+      <p class="caption">Here the Bottom seat Pearl 1 has a checker pinned on point 14 by a Silver checker.</p>
+    </section>
+
+    <section>
+      <h2>Bearing off</h2>
+      <p>A seat may bear checkers off once all of its remaining checkers are on its home points. A die takes a checker off from the point with exactly that distance to the edge. A higher die may be used for the farthest checker when no checker stands that far out. Borne-off checkers go into the tray on the right.</p>
+    </section>
+
+    <section>
+      <h2>Winning</h2>
+      <p>A team wins as soon as all sixteen of its checkers are borne off. When one player has finished, their teammate plays that player&rsquo;s rolls, so both teams keep rolling at the same rhythm. You also win if the other team runs out of time or resigns. If nobody can move any more, the team with fewer pips left wins (a draw if equal).</p>
+    </section>
+
+    <section>
+      <h2>Teamwork</h2>
+      <ul>
+        <li>You and your partner share a clock. The clock only runs while a person is on turn, and every turn adds the increment you chose.</li>
+        <li>Nothing on the board is hidden, so teamwork is about planning: use the team chat to agree on blocks and pins.</li>
+        <li>When your partner is on turn, click checkers on the board to build a suggested move. Only your team sees it, as green dashed arrows, and your partner can adopt it with one button.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Playing</h2>
+      <ul>
+        <li>Click one of your highlighted checkers, then click where it should go. Bearing off: click the checker, then the tray.</li>
+        <li>When the whole turn is complete it is sent automatically. Switch on &ldquo;Confirm each turn&rdquo; to get a button instead. Undo takes back moves you have not sent yet.</li>
+        <li>White arrows show the last move that was played.</li>
+      </ul>
+    </section>
+    <p class="back"><a class="btn primary" href="/">Back to the game</a> <a class="btn" href="/tutorial">Try the tutorial</a> <a class="btn" href="/puzzles">Solve puzzles</a></p>
+  </main>
+  <footer class="site-links"><a href="/rules">Rules</a><a href="/tutorial">Tutorial</a><a href="/puzzles">Puzzles</a><a href="/leaderboard">Leaderboard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cookies">Cookies</a></footer>
+  <script type="module" src="/client/js/rulesPage.js"></script>
+</body>
+</html>

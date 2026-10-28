@@ -1,0 +1,14 @@
+{
+  "appId": "com.dimitrispapadim.teamgammon",
+  "appName": "Team Gammon",
+  "webDir": "www",
+  "server": {
+    "allowNavigation": ["www.team-gammon.com", "team-gammon.com"]
+  },
+  "ios": {
+    "scheme": "App",
+    "contentInset": "always",
+    "backgroundColor": "#12161d",
+    "appendUserAgent": "TeamGammonApp/1"
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+.venv/
+__pycache__/
+*.log
+.env
+
+# runtime data and training artefacts
+data/*.db
+data/*.db-*
+data/selfplay/
+data/puzzles-raw*.jsonl
+models/*.tmp
+e2e/out/

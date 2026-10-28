@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Gammon &ndash; leaderboard</title>
+  <meta name="description" content="The best Team Gammon players by rating.">
+  <meta name="theme-color" content="#12161d">
+  <link rel="icon" href="/client/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/client/css/app.css">
+</head>
+<body class="doc">
+  <header id="top"><a class="brand" href="/"><span class="logo" aria-hidden="true">&#9679;&#9679;</span>Team Gammon</a><nav><a href="/">Play</a></nav></header>
+  <main class="rules legal">
+    <h1>Leaderboard</h1>
+    <p class="lead">Registered players ranked by rating. A rating moves after every rated game: beating a stronger team earns more than beating a weaker one.</p>
+    <p id="me" class="me-line" hidden></p>
+    <table class="legal-table board-table" id="board" hidden>
+      <thead><tr><th>#</th><th>Player</th><th class="num">Rating</th><th class="num">Games</th><th class="num">Wins</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" class="hint" hidden>No rated games yet. Sign in and play one to be the first on the list.</p>
+    <p id="problem" class="error" role="alert"></p>
+
+    <section>
+      <h2>How ratings work</h2>
+      <ul>
+        <li>Everybody starts at 1200. A team is as strong as the average of its two players.</li>
+        <li>Bots have fixed ratings, shown next to each level when you choose one, so a win against a stronger bot is worth more.</li>
+        <li>Ratings move faster during a player&rsquo;s first 20 rated games; those players are shown in grey with a question mark (provisional).</li>
+        <li>Guests are not rated. Games with fewer than 8 turns, abandoned games and games that ended with a server error do not count.</li>
+        <li>Your rating, rated games and wins are public here, with your name. Deleting your account removes them.</li>
+      </ul>
+    </section>
+    <p class="back"><a class="btn primary" href="/">Back to the game</a></p>
+  </main>
+  <footer class="site-links"><a href="/rules">Rules</a><a href="/tutorial">Tutorial</a><a href="/puzzles">Puzzles</a><a href="/leaderboard">Leaderboard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cookies">Cookies</a></footer>
+  <script type="module" src="/client/js/leaderboardPage.js"></script>
+</body>
+</html>

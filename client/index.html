@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Gammon</title>
+  <meta name="description" content="Team Gammon: backgammon for four players in two teams. Play online with friends or bots.">
+  <meta name="theme-color" content="#12161d">
+  <link rel="icon" href="/client/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/client/css/app.css">
+</head>
+<body>
+  <header id="top"></header>
+  <div id="connection" class="connection" role="status" hidden>Connection lost. Reconnecting...</div>
+  <main id="app"><p class="loading">Loading...</p></main>
+  <footer class="site-links"><a href="/rules">Rules</a><a href="/tutorial">Tutorial</a><a href="/puzzles">Puzzles</a><a href="/leaderboard">Leaderboard</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cookies">Cookies</a></footer>
+  <div id="toasts" aria-live="polite"></div>
+  <noscript><p class="loading">Team Gammon needs JavaScript.</p></noscript>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/client/js/main.js"></script>
+</body>
+</html>
