@@ -10,6 +10,7 @@
     "sync": "node scripts/build-www.mjs && cap sync ios",
     "serve": "node scripts/build-www.mjs && node scripts/serve.mjs",
     "smoke": "node scripts/smoke.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
     "assets": "capacitor-assets generate --ios --iconBackgroundColor #12161d --splashBackgroundColor #12161d --iconBackgroundColorDark #12161d --splashBackgroundColorDark #12161d",
     "open": "cap open ios"
   },

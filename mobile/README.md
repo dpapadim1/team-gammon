@@ -26,6 +26,7 @@ cd mobile
 npm.cmd install
 npm run serve        # http://127.0.0.1:8100/ - the app's web part in a browser
 npm run smoke        # automated check, screenshots in mobile/out/
+npm run screenshots  # App Store screenshots (1290 x 2796) in mobile/screenshots/
 npm run sync         # rebuild www/ and copy it into ios/ - run after any change to client/, engine/, bots/ or server/
 npm run assets       # regenerate the icon and splash images in ios/ from resources/
 ```
@@ -46,7 +47,7 @@ Building the actual iOS binary needs Xcode 26 on a Mac. Without a Mac, the GitHu
 5. **Build**: Actions > iOS TestFlight > Run workflow (or push a tag `ios-v1.0.0`). Each run uploads a build numbered with the run number; it shows up in App Store Connect > TestFlight after Apple's processing (10-30 min).
 6. **Test** on your iPhone with the TestFlight app (add yourself under TestFlight > Internal Testing).
 7. **Store listing** in App Store Connect, then Add for Review:
-   - Screenshots: 6.9" iPhone (1320 x 2868 or 1290 x 2796). Take them in TestFlight, or from `npm run serve` in a browser at 440 x 956 with device scale 3.
+   - Screenshots: `npm run screenshots` writes five 1290 x 2796 PNGs to `mobile/screenshots/`; drag them into the 6.9" iPhone slot. Any other size (for example a plain browser or phone screenshot) is rejected as "invalid dimensions"; accepted 6.9" sizes are 1260 x 2736, 1290 x 2796 and 1320 x 2868 (portrait).
    - Privacy policy URL: `https://www.team-gammon.com/privacy`; support URL: `https://www.team-gammon.com/`.
    - App Privacy: data linked to the user = user name and gameplay (ratings, games, chat) for app functionality, only when playing online; no tracking.
    - Age rating questionnaire: answer "yes" to unrestricted user-generated content (chat) if asked.
