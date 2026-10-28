@@ -1,5 +1,7 @@
-// App Store screenshots of the app bundle: 430 x 932 points at 3x = 1290 x 2796 pixels, a size App Store
-// Connect accepts for the 6.9" and 6.7" iPhone slots. PNG with an opaque page background.
+// App Store screenshots of the app bundle, one folder per App Store Connect iPhone slot (portrait, 3x, PNG
+// with an opaque page background):
+//   6.9-inch (large Dynamic Island):  430 x 932 points = 1290 x 2796 pixels
+//   6.3-inch (medium Dynamic Island): 393 x 852 points = 1179 x 2556 pixels
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,19 +9,25 @@ import { chromium } from 'playwright-core';
 import { build } from './build-www.mjs';
 import { serve } from './serve.mjs';
 
-const OUT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'screenshots');
-fs.rmSync(OUT, { recursive: true, force: true });
-fs.mkdirSync(OUT, { recursive: true });
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'screenshots');
+const SLOTS = [
+  { dir: 'iphone-6.9in-1290x2796', width: 430, height: 932 },
+  { dir: 'iphone-6.3in-1179x2556', width: 393, height: 852 },
+];
+fs.rmSync(ROOT, { recursive: true, force: true });
 
 build();
 const server = await serve(0);
 const base = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ channel: process.env.PW_CHANNEL ?? 'msedge', headless: true });
-const context = await browser.newContext({ viewport: { width: 430, height: 932 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
-const page = await context.newPage();
-const shot = (name) => page.screenshot({ path: path.join(OUT, `${name}.png`), type: 'png' });
 
-try {
+async function capture({ dir, width, height }) {
+  const OUT = path.join(ROOT, dir);
+  fs.mkdirSync(OUT, { recursive: true });
+  const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
+  const page = await context.newPage();
+  const shot = (name) => page.screenshot({ path: path.join(OUT, `${name}.png`), type: 'png' });
+
   await page.goto(`${base}/`);
   await page.waitForLoadState('networkidle');
   await shot('1-home');
@@ -60,7 +68,12 @@ try {
     await page.waitForTimeout(300);
     await shot(file);
   }
+  await context.close();
   console.log(`screenshots in ${OUT}`);
+}
+
+try {
+  for (const slot of SLOTS) await capture(slot);
 } finally {
   await browser.close();
   server.close();

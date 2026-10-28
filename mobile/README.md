@@ -26,7 +26,7 @@ cd mobile
 npm.cmd install
 npm run serve        # http://127.0.0.1:8100/ - the app's web part in a browser
 npm run smoke        # automated check, screenshots in mobile/out/
-npm run screenshots  # App Store screenshots (1290 x 2796) in mobile/screenshots/
+npm run screenshots  # App Store screenshots (6.9" and 6.3" iPhone) in mobile/screenshots/
 npm run sync         # rebuild www/ and copy it into ios/ - run after any change to client/, engine/, bots/ or server/
 npm run assets       # regenerate the icon and splash images in ios/ from resources/
 ```
@@ -47,7 +47,7 @@ Building the actual iOS binary needs Xcode 26 on a Mac. Without a Mac, the GitHu
 5. **Build**: Actions > iOS TestFlight > Run workflow (or push a tag `ios-v1.0.0`). Each run uploads a build numbered with the run number; it shows up in App Store Connect > TestFlight after Apple's processing (10-30 min).
 6. **Test** on your iPhone with the TestFlight app (add yourself under TestFlight > Internal Testing).
 7. **Store listing** in App Store Connect, then Add for Review:
-   - Screenshots: `npm run screenshots` writes five 1290 x 2796 PNGs to `mobile/screenshots/`; drag them into the 6.9" iPhone slot. Any other size (for example a plain browser or phone screenshot) is rejected as "invalid dimensions"; accepted 6.9" sizes are 1260 x 2736, 1290 x 2796 and 1320 x 2868 (portrait).
+   - Screenshots: `npm run screenshots` writes five PNGs per iPhone slot to `mobile/screenshots/`: `iphone-6.9in-1290x2796` for the 6.9" slot and `iphone-6.3in-1179x2556` for the 6.3" slot (iPhone with Dynamic Island, medium display). Drag each folder's files into the matching slot; any other size is rejected as "invalid dimensions". Accepted portrait sizes are 1260 x 2736, 1290 x 2796 and 1320 x 2868 for 6.9", and 1179 x 2556 and 1206 x 2622 for 6.3".
    - Privacy policy URL: `https://www.team-gammon.com/privacy`; support URL: `https://www.team-gammon.com/`.
    - App Privacy: data linked to the user = user name and gameplay (ratings, games, chat) for app functionality, only when playing online; no tracking.
    - Age rating questionnaire: answer "yes" to unrestricted user-generated content (chat) if asked.
