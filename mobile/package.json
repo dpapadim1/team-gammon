@@ -12,6 +12,7 @@
     "smoke": "node scripts/smoke.mjs",
     "screenshots": "node scripts/screenshots.mjs",
     "preview": "node scripts/app-preview.mjs",
+    "header": "node scripts/render-header.mjs",
     "check-listing": "node scripts/check-listing.mjs",
     "assets": "capacitor-assets generate --ios --iconBackgroundColor #12161d --splashBackgroundColor #12161d --iconBackgroundColorDark #12161d --splashBackgroundColorDark #12161d",
     "open": "cap open ios"

@@ -28,6 +28,7 @@ npm run serve        # http://127.0.0.1:8100/ - the app's web part in a browser
 npm run smoke        # automated check, screenshots in mobile/out/
 npm run screenshots  # App Store screenshots (6.9" and 6.3" iPhone) in mobile/screenshots/
 npm run preview      # App Store preview video (886 x 1920) in mobile/screenshots/app-preview/
+npm run header       # App Store header artwork (5244 x 2950 and 3840 x 1646) in mobile/screenshots/header/ - after npm run screenshots
 npm run check-listing  # length check of the store texts in store/listing.md
 npm run sync         # rebuild www/ and copy it into ios/ - run after any change to client/, engine/, bots/ or server/
 npm run assets       # regenerate the icon and splash images in ios/ from resources/
@@ -50,7 +51,7 @@ Building the actual iOS binary needs Xcode 26 on a Mac. Without a Mac, the GitHu
 6. **Test** on your iPhone with the TestFlight app (add yourself under TestFlight > Internal Testing).
 7. **Store listing** in App Store Connect, then Add for Review:
    - Screenshots: `npm run screenshots` writes five PNGs per iPhone slot to `mobile/screenshots/`: `iphone-6.9in-1290x2796` for the 6.9" slot and `iphone-6.3in-1179x2556` for the 6.3" slot (iPhone with Dynamic Island, medium display). Drag each folder's files into the matching slot; any other size is rejected as "invalid dimensions". Accepted portrait sizes are 1260 x 2736, 1290 x 2796 and 1320 x 2868 for 6.9", and 1179 x 2556 and 1206 x 2622 for 6.3".
-   - App preview (optional) and texts (subtitle, promotional text, description, keywords, URLs, category): ready to paste from [store/listing.md](store/listing.md).
+   - App preview (optional) and texts (subtitle, promotional text, description, keywords, URLs, category): ready to paste from [store/listing.md](store/listing.md). Header artwork (5244 x 2950 or 3840 x 1646): `npm run header`.
    - Privacy policy URL: `https://www.team-gammon.com/privacy`; support URL: `https://www.team-gammon.com/`.
    - App Privacy: data linked to the user = user name and gameplay (ratings, games, chat) for app functionality, only when playing online; no tracking.
    - Age rating questionnaire: answer "yes" to unrestricted user-generated content (chat) if asked.
